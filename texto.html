@@ -11,162 +11,140 @@
 </head>
 <body>
     
-    <!-- Bootstrap NavBar -->
-<nav class="navbar navbar-expand-md navbar-dark bg-primary">
-    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand" href="#">
-      <img src="https://v4-alpha.getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-      <span class="menu-collapsed">My Bar</span>
-    </a>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
+    <h1>Olá, mundo!</h1>    
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    
+    <!--<title>Dashboard Sidebar Menu</title>--> 
+</head>
+<body>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <!--<img src="logo.png" alt="">-->
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">Codinglab</span>
+                    <span class="profession">Web developer</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <li class="search-box">
+                    <i class='bx bx-search icon'></i>
+                    <input type="text" placeholder="Search...">
+                </li>
+
+                <ul class="menu-links">
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bar-chart-alt-2 icon' ></i>
+                            <span class="text nav-text">Revenue</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-bell icon'></i>
+                            <span class="text nav-text">Notifications</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-pie-chart-alt icon' ></i>
+                            <span class="text nav-text">Analytics</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-heart icon' ></i>
+                            <span class="text nav-text">Likes</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-link">
+                        <a href="#">
+                            <i class='bx bx-wallet icon' ></i>
+                            <span class="text nav-text">Wallets</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Logout</span>
+                    </a>
+                </li>
+
+                <li class="mode">
+                    <div class="sun-moon">
+                        <i class='bx bx-moon icon moon'></i>
+                        <i class='bx bx-sun icon sun'></i>
+                    </div>
+                    <span class="mode-text text">Dark mode</span>
+
+                    <div class="toggle-switch">
+                        <span class="switch"></span>
+                    </div>
+                </li>
+                
+            </div>
+        </div>
+
+    </nav>
+
+    <section class="home">
+        <div class="text">Dashboard Sidebar</div>
+    </section>
+
+    <script>
+        const body = document.querySelector('body'),
+      sidebar = body.querySelector('nav'),
+      toggle = body.querySelector(".toggle"),
+      searchBtn = body.querySelector(".search-box"),
+      modeSwitch = body.querySelector(".toggle-switch"),
+      modeText = body.querySelector(".mode-text");
+
+
+toggle.addEventListener("click" , () =>{
+    sidebar.classList.toggle("close");
+})
+
+searchBtn.addEventListener("click" , () =>{
+    sidebar.classList.remove("close");
+})
+
+modeSwitch.addEventListener("click" , () =>{
+    body.classList.toggle("dark");
+    
+    if(body.classList.contains("dark")){
+        modeText.innerText = "Light mode";
+    }else{
+        modeText.innerText = "Dark mode";
         
-        <!-- This menu is hidden in bigger devices with d-sm-none. 
-             The sidebar isn't proper for smaller screens imo, so this dropdown menu can keep all the useful sidebar itens exclusively for smaller screens  -->
-        <li class="nav-item dropdown d-sm-block d-md-none">
-          <a class="nav-link dropdown-toggle" href="#" id="smallerscreenmenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Menu
-          </a>
-          <div class="dropdown-menu" aria-labelledby="smallerscreenmenu">
-              <a class="dropdown-item" href="#">Dashboard</a>
-              <a class="dropdown-item" href="#">Profile</a>
-              <a class="dropdown-item" href="#">Tasks</a>
-              <a class="dropdown-item" href="#">Etc ...</a>
-          </div>
-        </li><!-- Smaller devices menu END -->
-        
-      </ul>
-    </div>
-  </nav><!-- NavBar END -->
-  
-  
-  <!-- Bootstrap row -->
-  <div class="row" id="body-row">
-      <!-- Sidebar -->
-      <div id="sidebar-container" class="sidebar-expanded d-none d-md-block"><!-- d-* hiddens the Sidebar in smaller devices. Its itens can be kept on the Navbar 'Menu' -->
-          <!-- Bootstrap List Group -->
-          <ul class="list-group">
-              <!-- Separator with title -->
-              <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
-                  <small>MAIN MENU</small>
-              </li>
-              <!-- /END Separator -->
-              <!-- Menu with submenu -->
-              <a href="#submenu1" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
-                  <div class="d-flex w-100 justify-content-start align-items-center">
-                      <span class="fa fa-dashboard fa-fw mr-3"></span> 
-                      <span class="menu-collapsed">Dashboard</span>
-                      <span class="submenu-icon ml-auto"></span>
-                  </div>
-              </a>
-              <!-- Submenu content -->
-              <div id='submenu1' class="collapse sidebar-submenu">
-                  <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                      <span class="menu-collapsed">Charts</span>
-                  </a>
-                  <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                      <span class="menu-collapsed">Reports</span>
-                  </a>
-                  <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                      <span class="menu-collapsed">Tables</span>
-                  </a>
-              </div>
-              <a href="#submenu2" data-toggle="collapse" aria-expanded="false" class="bg-dark list-group-item list-group-item-action flex-column align-items-start">
-                  <div class="d-flex w-100 justify-content-start align-items-center">
-                      <span class="fa fa-user fa-fw mr-3"></span>
-                      <span class="menu-collapsed">Profile</span>
-                      <span class="submenu-icon ml-auto"></span>
-                  </div>
-              </a>
-              <!-- Submenu content -->
-              <div id='submenu2' class="collapse sidebar-submenu">
-                  <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                      <span class="menu-collapsed">Settings</span>
-                  </a>
-                  <a href="#" class="list-group-item list-group-item-action bg-dark text-white">
-                      <span class="menu-collapsed">Password</span>
-                  </a>
-              </div>            
-              <a href="#" class="bg-dark list-group-item list-group-item-action">
-                  <div class="d-flex w-100 justify-content-start align-items-center">
-                      <span class="fa fa-tasks fa-fw mr-3"></span>
-                      <span class="menu-collapsed">Tasks</span>    
-                  </div>
-              </a>
-              <!-- Separator with title -->
-              <li class="list-group-item sidebar-separator-title text-muted d-flex align-items-center menu-collapsed">
-                  <small>OPTIONS</small>
-              </li>
-              <!-- /END Separator -->
-              <a href="#" class="bg-dark list-group-item list-group-item-action">
-                  <div class="d-flex w-100 justify-content-start align-items-center">
-                      <span class="fa fa-calendar fa-fw mr-3"></span>
-                      <span class="menu-collapsed">Calendar</span>
-                  </div>
-              </a>
-              <a href="#" class="bg-dark list-group-item list-group-item-action">
-                  <div class="d-flex w-100 justify-content-start align-items-center">
-                      <span class="fa fa-envelope-o fa-fw mr-3"></span>
-                      <span class="menu-collapsed">Messages <span class="badge badge-pill badge-primary ml-2">5</span></span>
-                  </div>
-              </a>
-              <!-- Separator without title -->
-              <li class="list-group-item sidebar-separator menu-collapsed"></li>            
-              <!-- /END Separator -->
-              <a href="#" class="bg-dark list-group-item list-group-item-action">
-                  <div class="d-flex w-100 justify-content-start align-items-center">
-                      <span class="fa fa-question fa-fw mr-3"></span>
-                      <span class="menu-collapsed">Help</span>
-                  </div>
-              </a>
-              <a href="#" data-toggle="sidebar-colapse" class="bg-dark list-group-item list-group-item-action d-flex align-items-center">
-                  <div class="d-flex w-100 justify-content-start align-items-center">
-                      <span id="collapse-icon" class="fa fa-2x mr-3"></span>
-                      <span id="collapse-text" class="menu-collapsed">Collapse</span>
-                  </div>
-              </a>
-              <!-- Logo -->
-              <li class="list-group-item logo-separator d-flex justify-content-center">
-                  <img src='https://v4-alpha.getbootstrap.com/assets/brand/bootstrap-solid.svg' width="30" height="30" />    
-              </li>   
-          </ul><!-- List Group END-->
-      </div><!-- sidebar-container END -->
-  
-      <!-- MAIN -->
-      <div class="col">
-          
-          <h1>
-              Collapsing Menu
-              <small class="text-muted">Version 2.1</small>
-          </h1>
-          
-          
-          <div class="card">
-              <h4 class="card-header">Requirements</h4>
-              <div class="card-body">
-                  <ul>
-                      <li>JQuery</li>
-                      <li>Bootstrap 4 beta-3</li>
-                  </ul>
-              </div>
-          </div>
-         
-  
-  
-      </div><!-- Main Col END -->
-      
-  </div><!-- body-row END -->
+    }
+});
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </body>

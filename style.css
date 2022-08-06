@@ -378,3 +378,23 @@ body.dark .home .text {
     border: 1px solid black;
     border-radius: 5px;
 }
+.box{
+    box-sizing: border-box;
+    position: absolute;
+    width: 861px;
+    height: 287px;
+    left: 291px;
+    top: 389px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    border-radius: 10px;
+}
+
+.nome{
+    position: absolute;
+    font-size: 25px;
+    width: 600px;
+    height: 33px;
+    left: 517px;
+    top: 344px;    
+}

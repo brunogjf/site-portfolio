@@ -106,7 +106,9 @@ body.dark {
 .sidebar.close .text {
     opacity: 0;
 }
-
+#ola{
+    margin-left: 230px;
+}
 /* =========================== */
 
 .sidebar header {
@@ -361,7 +363,7 @@ body.dark .home .text {
     background-size: cover;
 }
 
-.rectangle {
+.rectangle{
     box-sizing: border-box;
     position: absolute;
     width: 929px;
@@ -377,6 +379,7 @@ body.dark .home .text {
     padding: 15px;
     border: 1px solid black;
     border-radius: 5px;
+    
 }
 .box{
     box-sizing: border-box;
@@ -397,4 +400,15 @@ body.dark .home .text {
     height: 33px;
     left: 517px;
     top: 344px;    
+}
+
+.textoPrincipal{
+    position: absolute;
+    text-align: justify;
+    font-size: 20px;
+    width: 732px;
+    height: 238px;
+    left: 380px;
+    top: 450px;
+    z-index: 2;
 }

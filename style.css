@@ -462,3 +462,30 @@ body.dark .home .text {
     top: 630px;
     z-index: 2;
 }
+.bxl-facebook-circle{
+    position: absolute;
+    text-align: justify;
+    font-size: 100px;
+    left: 500px;
+    top: 520px;
+    z-index: 2;
+}
+.bxl-instagram-alt{
+    position: absolute;
+    text-align: justify;
+    font-size: 100px;
+    left: 900px;
+    top: 520px;
+    z-index: 2;
+}
+.bxl-linkedin-square{
+    position: absolute;
+    text-align: justify;
+    font-size: 100px;
+    left: 700px;
+    top: 520px;
+    z-index: 2;
+}
+#principal{
+    top: 420px;
+}

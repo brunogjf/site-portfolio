@@ -412,3 +412,53 @@ body.dark .home .text {
     top: 450px;
     z-index: 2;
 }
+.campo1{
+    position: absolute;
+    text-align: justify;
+    font-size: 14px;
+    width: 200px;
+    height: 30px;
+    left: 350px;
+    top: 500px;
+    z-index: 2;
+}
+.campo2{
+    position: absolute;
+    text-align: justify;
+    font-size: 14px;
+    width: 300px;
+    height: 30px;
+    left: 570px;
+    top: 500px;
+    z-index: 2;
+}
+.campo3{
+    position: absolute;
+    text-align: justify;
+    font-size: 14px;
+    width: 200px;
+    height: 30px;
+    left: 890px;
+    top: 500px;
+    z-index: 2;
+}
+.campo4{
+    position: absolute;
+    text-align: justify;
+    font-size: 14px;
+    width: 740px;
+    height: 70px;
+    left: 350px;
+    top: 550px;
+    z-index: 2;
+}
+#botao{
+    position: absolute;
+    text-align: justify;
+    font-size: 14px;
+    width: 70px;
+    height: 40px;
+    left: 700px;
+    top: 630px;
+    z-index: 2;
+}
